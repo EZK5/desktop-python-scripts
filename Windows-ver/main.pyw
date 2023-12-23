@@ -1,11 +1,12 @@
 import os
+import subprocess
 
 # replace user for personal use otherwise directory will not exist!
 user = "pinke"
 desktop_dir = f"C:/Users/{user}/Desktop"
 
 if __name__ == "__main__":
-    while True: # continuously running as background script
+    #while True: # continuously running as background script
         desktop_files = os.listdir(desktop_dir)
 
         for file in desktop_files:
@@ -18,6 +19,6 @@ if __name__ == "__main__":
                 
                 # construct the absolute pathname and change 'hidden' attribute
                 file_path = desktop_dir + '/' + file
-                p = os.popen(f"attrib +h {file_path}")
-                t = p.read()
-                p.close()
+                process = os.popen(f"attrib +h {file_path}")
+                t = process.read()
+                process.close()
