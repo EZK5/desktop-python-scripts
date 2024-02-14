@@ -6,7 +6,7 @@ user = "pinke"
 desktop_dir = f"C:/Users/{user}/Desktop"
 
 if __name__ == "__main__":
-    #while True: # continuously running as background script
+    while True: # continuously running as background script
         desktop_files = os.listdir(desktop_dir)
 
         for file in desktop_files:
